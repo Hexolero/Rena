@@ -9,7 +9,7 @@ const ILYA_MOVESPEED = 6.0
 const RENA_MOVESPEED = 9.0
 
 const ILYA_CAMERA_POS = Vector3(0, 2.36, 0.65) # this is when camera container is a child of ilya
-const RENA_CAMERA_POS = Vector3(0, 0.92, 1.42) # this is when camera container is a child of rena
+const RENA_CAMERA_POS = Vector3(0, 0.98, 0.54) # this is when camera container is a child of rena
 
 # Shared constants
 const MOUSE_CAMERA_TURN_SPEED = 0.005
@@ -52,6 +52,7 @@ var mouseFrameDelta = Vector2() # CLEARED EACH PHYSICS FRAME
 var currentFallSpeed = 0.0
 
 func _ready():
+	$ilya.visible = false
 	$ilya/camera_container/player_camera.current = true
 	facingDir = DEFAULT_FACING_DIR.rotated(UP, $ilya.rotation.y)
 	
@@ -80,11 +81,13 @@ func _physics_process(delta):
 			if nextCharacter == "Ilya":
 				remove_child(cc_ref)
 				$ilya.add_child(cc_ref)
+				$ilya.visible = false
 				cc_ref.translation = ILYA_CAMERA_POS
 				cc_ref.rotation = Vector3()
 			elif nextCharacter == "Rena":
 				remove_child(cc_ref)
 				$rena.add_child(cc_ref)
+				$rena.visible = false
 				cc_ref.translation = RENA_CAMERA_POS
 				cc_ref.rotation = Vector3()
 			
@@ -241,15 +244,19 @@ func swap_character():
 	interpolateTimer.one_shot = true
 	interpolateTimer.start()
 	
-	# Unparent camera_container and set its position/rotation properly
+	# Unparent camera_container and set its position/rotation properly. Make current character visible again
 	if currentCharacter == "Ilya":
 		$ilya.remove_child(cc_ref)
 		add_child(cc_ref)
+		
+		$ilya.visible = true
 		
 		nextCharacter = "Rena"
 	elif currentCharacter == "Rena":
 		$rena.remove_child(cc_ref)
 		add_child(cc_ref)
+		
+		$rena.visible = true
 		
 		nextCharacter = "Ilya"
 	

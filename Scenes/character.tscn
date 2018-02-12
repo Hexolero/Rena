@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/ilya.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/rena.tscn" type="PackedScene" id=3]
 
-[node name="character_controller" type="Spatial"]
+[node name="character_controller" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 gridMapPath = null
