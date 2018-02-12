@@ -14,8 +14,7 @@ const RENA_CAMERA_POS = Vector3(0, 0.92, 1.42) # this is when camera container i
 # Shared constants
 const MOUSE_CAMERA_TURN_SPEED = 0.005
 
-const CAMERA_MOVESPEED_T = 8.0
-const CAMERA_MOVESPEED_R = (PI / 16) * CAMERA_MOVESPEED_T
+const CAMERA_INTERPOLATION_TIME = 2.0
 
 const CAMERA_HIGH_ANGLE = -PI / 3
 const CAMERA_LOW_ANGLE = PI / 3
@@ -37,13 +36,8 @@ var swapOriginRotation
 var swapDeltaPos
 var swapDeltaRotation
 
-var cameraTranslating
-var translateTimer
-var translationTime
-
-var cameraRotating
-var rotateTimer
-var rotationTime
+var cameraInterpolating
+var interpolateTimer
 # end swap variables
 
 var moveArrAction = ["movement_up", "movement_left", "movement_down", "movement_right"]
@@ -70,20 +64,18 @@ func _physics_process(delta):
 		currentCharNode = $ilya
 	else:
 		currentCharNode = $rena
-	
 	if characterSwapQueued && currentCharNode.is_on_floor():
 		characterSwapQueued = false # consume event
 		if is_friend_in_sight():
 			swap_character()
 	
 	if currentCharacter == "Swapping":
-		if cameraTranslating:
-			$camera_container.translation += (delta / translationTime) * swapDeltaPos
-		if cameraRotating:
-			$camera_container.rotation += (delta / rotationTime) * swapDeltaRotation
+		if cameraInterpolating:
+			$camera_container.translation += (delta / CAMERA_INTERPOLATION_TIME) * swapDeltaPos
+			$camera_container.rotation += (delta / CAMERA_INTERPOLATION_TIME) * swapDeltaRotation
 		
 		# Check for interpolation end
-		if !cameraTranslating && !cameraRotating:
+		if !cameraInterpolating:
 			var cc_ref = $camera_container
 			if nextCharacter == "Ilya":
 				remove_child(cc_ref)
@@ -210,24 +202,14 @@ func swap_character():
 	swapDeltaPos = swapNewPos - swapOriginPos
 	swapDeltaRotation = swapNewRotation - swapOriginRotation
 	
-	# Calculate times + Timer setup
-	translationTime = swapDeltaPos.length() / CAMERA_MOVESPEED_T
-	cameraTranslating = true
-	translateTimer = Timer.new()
-	add_child(translateTimer)
-	translateTimer.connect("timeout", self, "stop_translating")
-	translateTimer.wait_time = translationTime
-	translateTimer.one_shot = true
-	translateTimer.start()
-	
-	rotationTime = swapDeltaRotation.length() / CAMERA_MOVESPEED_R
-	cameraRotating = true
-	rotateTimer = Timer.new()
-	add_child(rotateTimer)
-	rotateTimer.connect("timeout", self, "stop_rotating")
-	rotateTimer.wait_time = rotationTime
-	rotateTimer.one_shot = true
-	rotateTimer.start()
+	# Timer setup
+	cameraInterpolating = true
+	interpolateTimer = Timer.new()
+	add_child(interpolateTimer)
+	interpolateTimer.connect("timeout", self, "stop_interpolating")
+	interpolateTimer.wait_time = CAMERA_INTERPOLATION_TIME
+	interpolateTimer.one_shot = true
+	interpolateTimer.start()
 	
 	# Unparent camera_container and set its position/rotation properly
 	if currentCharacter == "Ilya":
@@ -247,8 +229,5 @@ func swap_character():
 	# Finally, set currentCharacter to the swapping state
 	currentCharacter = "Swapping"
 
-func stop_translating():
-	cameraTranslating = false
-
-func stop_rotating():
-	cameraRotating = false
+func stop_interpolating():
+	cameraInterpolating = false

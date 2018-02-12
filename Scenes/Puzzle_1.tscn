@@ -136,9 +136,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8612, 2.48413, -3.12313 )
 _sections_unfolded = [ "Transform" ]
 gridMapPath = NodePath("../GridMap")
 
-[node name="camera_container" parent="character_controller/ilya" index="3"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.36, 0.65 )
-
 
 [editable path="character_controller"]
