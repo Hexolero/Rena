@@ -123,8 +123,38 @@ func _physics_process(delta):
 		# apply gravity and update is_on_floor().
 		$ilya.move_and_slide(currentFallSpeed * UP, UP) # MAS automatically uses delta
 	elif currentCharacter == "Rena":
-		# TODO
-		pass
+		# rotate camera
+		$rena.rotate_y(-mouseFrameDelta.x * MOUSE_CAMERA_TURN_SPEED)
+		
+		var newPitchAngle = $rena/camera_container.rotation.x + (mouseFrameDelta.y * MOUSE_CAMERA_TURN_SPEED)
+		if !(newPitchAngle > CAMERA_HIGH_ANGLE && newPitchAngle < CAMERA_LOW_ANGLE):
+			# camera pitch would be outside the bounds
+			if newPitchAngle < CAMERA_HIGH_ANGLE:
+				$rena/camera_container.rotation.x = 0.0
+				$rena/camera_container.rotate_x(CAMERA_HIGH_ANGLE)
+			elif newPitchAngle > CAMERA_LOW_ANGLE:
+				$rena/camera_container.rotation.x = 0.0
+				$rena/camera_container.rotate_x(CAMERA_LOW_ANGLE)
+		else:
+			# camera pitch would be a-ok within the bounds
+			$rena/camera_container.rotate_x(mouseFrameDelta.y * MOUSE_CAMERA_TURN_SPEED)
+		
+		if !$rena.is_on_floor():
+			# accelerate downwards whilst falling
+			currentFallSpeed -= FALL_ACC
+		else:
+			# gradually decrease falling speed whilst grounded
+			currentFallSpeed /= 2
+		
+		# WASD movement
+		movementDir = Vector3()
+		for i in range(4):
+			if moveArrCheck[i]:
+				movementDir += moveArrDir[i].rotated(UP, $rena.rotation.y)
+		$rena.move_and_slide(RENA_MOVESPEED * movementDir, UP)
+		
+		# apply gravity and update is_on_floor().
+		$rena.move_and_slide(currentFallSpeed * UP, UP) # MAS automatically uses delta
 	
 	mouseFrameDelta = Vector2() # reset mouse frame delta
 
