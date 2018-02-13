@@ -2,15 +2,15 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Ilya.dae-79d632bf9cd072df7cbc55d22452ed42.scn"
+path="res://.import/leverBeta.dae-75e6e210535852c2add043057a7e4834.scn"
 
 [deps]
 
-source_file="res://Materials/Ilya.dae"
-source_md5="0c9b58d53684d3592834f66c98e5e0ce"
+source_file="res://Materials/leverBeta.dae"
+source_md5="64b27b9a2b0235990425a7f2a346a46e"
 
-dest_files=[ "res://.import/Ilya.dae-79d632bf9cd072df7cbc55d22452ed42.scn" ]
-dest_md5="f5ed59ca06d3bf6729ade3cb20507130"
+dest_files=[ "res://.import/leverBeta.dae-75e6e210535852c2add043057a7e4834.scn" ]
+dest_md5="aafd60a5faed7d8d2799059cd80ed657"
 
 [params]
 

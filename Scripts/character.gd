@@ -161,9 +161,9 @@ func _physics_process(delta):
 	
 	mouseFrameDelta = Vector2() # reset mouse frame delta
 
-func _process(delta):
-	
-	pass
+#func _process(delta):
+#	
+#	pass
 
 func _input(event):
 	# Keyboard input

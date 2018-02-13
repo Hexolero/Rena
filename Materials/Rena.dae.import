@@ -7,10 +7,10 @@ path="res://.import/Rena.dae-83d06959c7662f87b5af6bcdf6a93c5b.scn"
 [deps]
 
 source_file="res://Materials/Rena.dae"
-source_md5="a4133d57d09518fdd42db87f6239b28d"
+source_md5="1deecfbfe7611c64e69ae4297393f138"
 
 dest_files=[ "res://.import/Rena.dae-83d06959c7662f87b5af6bcdf6a93c5b.scn" ]
-dest_md5="06c1667b946c3ac208ad319f78e0ce4d"
+dest_md5="1003e966feca70911866994a75e2f65c"
 
 [params]
 
