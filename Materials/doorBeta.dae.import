@@ -7,7 +7,7 @@ path="res://.import/doorBeta.dae-089d57c17e60327e1392d0d0837016a1.scn"
 [deps]
 
 source_file="res://Materials/doorBeta.dae"
-source_md5="3705d96837871e32287404d9d7d5a020"
+source_md5="69279e335a5facaf2c64f6561c8edbab"
 
 dest_files=[ "res://.import/doorBeta.dae-089d57c17e60327e1392d0d0837016a1.scn" ]
 dest_md5="850a8228a7d4ed32603fcbea66af6076"
