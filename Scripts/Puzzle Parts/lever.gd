@@ -11,10 +11,10 @@ func _activate():
 		powerable._power(self)
 		powerState = true
 		# play animation for switching on
-		$AnimationPlayer.play("default")
+		$AnimationPlayer.play("leverBeta")
 	else:
 		# power was on, now turns off
 		powerable._depower(self)
 		powerState = false
 		# play animation for switching off
-		$AnimationPlayer.play_backwards("default")
+		$AnimationPlayer.play_backwards("leverBeta")
