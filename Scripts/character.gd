@@ -24,6 +24,8 @@ const UP = Vector3(0, 1, 0)
 const DEFAULT_FACING_DIR = Vector3(0, 0, 1)
 const SIGHTCAST_EXTENT = 1000
 
+const LEVER_USE_RANGE = 8.0
+
 # Character variables
 var currentCharacter = "Ilya"
 
@@ -217,7 +219,13 @@ func trigger_in_sight():
 	if !sightcast_data.empty():
 		# check if collider in sight is a lever
 		# and that we meet the requirements to activate it
-		if sightcast_data.collider.name.find("lever") != -1 && currentCharacter == "Ilya":
+		var dist
+		if currentCharacter == "Ilya":
+			dist = ($ilya.translation - sightcast_data.collider.translation).length()
+		elif currentCharacter == "Rena":
+			dist = ($rena.translation - sightcast_data.collider.translation).length()
+		print(dist)
+		if sightcast_data.collider.name.find("lever") != -1 && currentCharacter == "Ilya" && dist < LEVER_USE_RANGE:
 			sightcast_data.collider._activate()
 
 func swap_character():
