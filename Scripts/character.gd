@@ -27,7 +27,7 @@ const SIGHTCAST_EXTENT = 1000
 # Character variables
 var currentCharacter = "Ilya"
 
-var characterSwapQueued = false
+var clickEventQueued = false # Queued for physics pass
 var nextCharacter
 
 # swap variables
@@ -65,10 +65,12 @@ func _physics_process(delta):
 		currentCharNode = $ilya
 	else:
 		currentCharNode = $rena
-	if characterSwapQueued && currentCharNode.is_on_floor():
-		characterSwapQueued = false # consume event
+	if clickEventQueued && currentCharNode.is_on_floor():
+		clickEventQueued = false # consume event
 		if is_friend_in_sight():
 			swap_character()
+		else:
+			trigger_in_sight()
 	
 	if currentCharacter == "Swapping":
 		if cameraInterpolating:
@@ -178,32 +180,45 @@ func _input(event):
 	
 	# Mouse input
 	if event.is_action_pressed("swap_character"):
-		characterSwapQueued = true
+		clickEventQueued = true
 	if event is InputEventMouseMotion:
 		mouseFrameDelta += event.relative
 
-func is_friend_in_sight():
+func get_collider_in_sight():
 	# call this only during _physics_process(), else space may be locked -> error
-	# returns true if the player is currently looking at the collider of their friend, otherwise false
+	# returns raycast data from centre of screen
 	var midScreen = OS.window_size / 2
 	var space_state = get_world().direct_space_state
 	var exceptions = []
 	
 	var sightcast_normal
 	var sightcast_origin
-	var sightcast_data
 	if currentCharacter == "Ilya":
 		sightcast_normal = $ilya/camera_container/player_camera.project_ray_normal(midScreen)
 		sightcast_origin = $ilya/camera_container/player_camera.project_ray_origin(midScreen)
-		sightcast_data = space_state.intersect_ray(sightcast_origin, sightcast_origin + sightcast_normal * SIGHTCAST_EXTENT, exceptions)
-		if !sightcast_data.empty():
-			return sightcast_data.collider.name == "rena"
 	elif currentCharacter == "Rena":
 		sightcast_normal = $rena/camera_container/player_camera.project_ray_normal(midScreen)
 		sightcast_origin = $rena/camera_container/player_camera.project_ray_origin(midScreen)
-		sightcast_data = space_state.intersect_ray(sightcast_origin, sightcast_origin + sightcast_normal * SIGHTCAST_EXTENT, exceptions)
+	return space_state.intersect_ray(sightcast_origin, sightcast_origin + sightcast_normal * SIGHTCAST_EXTENT, exceptions)
+
+func is_friend_in_sight():
+	# call this only during _physics_process(), else space may be locked -> error
+	# returns true if the player is currently looking at the collider of their friend, otherwise false
+	var sightcast_data = get_collider_in_sight()
+	if currentCharacter == "Ilya":
+		if !sightcast_data.empty():
+			return sightcast_data.collider.name == "rena"
+	elif currentCharacter == "Rena":
 		if !sightcast_data.empty():
 			return sightcast_data.collider.name == "ilya"
+
+func trigger_in_sight():
+	var sightcast_data = get_collider_in_sight()
+	if !sightcast_data.empty():
+		# check if collider in sight is a lever
+		# and that we meet the requirements to activate it
+		if sightcast_data.collider.name.find("lever") != -1 && currentCharacter == "Ilya":
+			sightcast_data.collider._activate()
 
 func swap_character():
 	# We can successsfully start a character swap.
