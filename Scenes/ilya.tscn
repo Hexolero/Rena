@@ -1,13 +1,14 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Materials/Skin.material" type="Material" id=1]
-[ext_resource path="res://Materials/Hair.material" type="Material" id=2]
-[ext_resource path="res://Materials/Accessory.material" type="Material" id=3]
-[ext_resource path="res://Materials/Line.material" type="Material" id=4]
-[ext_resource path="res://Materials/Shirt.material" type="Material" id=5]
-[ext_resource path="res://Materials/Belt.material" type="Material" id=6]
-[ext_resource path="res://Materials/Pants.material" type="Material" id=7]
-[ext_resource path="res://Materials/Shoes.material" type="Material" id=8]
+[ext_resource path="res://Graphical Assets/Skin.material" type="Material" id=1]
+[ext_resource path="res://Graphical Assets/Hair.material" type="Material" id=2]
+[ext_resource path="res://Graphical Assets/Accessory.material" type="Material" id=3]
+[ext_resource path="res://Graphical Assets/Line.material" type="Material" id=4]
+[ext_resource path="res://Graphical Assets/Shirt.material" type="Material" id=5]
+[ext_resource path="res://Graphical Assets/Belt.material" type="Material" id=6]
+[ext_resource path="res://Graphical Assets/Pants.material" type="Material" id=7]
+[ext_resource path="res://Graphical Assets/Shoes.material" type="Material" id=8]
+
 
 [sub_resource type="ArrayMesh" id=1]
 

@@ -1,11 +1,12 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Materials/ShortFur.material" type="Material" id=1]
-[ext_resource path="res://Materials/Line.material" type="Material" id=2]
-[ext_resource path="res://Materials/LongFur.material" type="Material" id=3]
-[ext_resource path="res://Materials/Ear.material" type="Material" id=4]
-[ext_resource path="res://Materials/Mouth.material" type="Material" id=5]
-[ext_resource path="res://Materials/Ankles.material" type="Material" id=6]
+[ext_resource path="res://Graphical Assets/ShortFur.material" type="Material" id=1]
+[ext_resource path="res://Graphical Assets/Line.material" type="Material" id=2]
+[ext_resource path="res://Graphical Assets/LongFur.material" type="Material" id=3]
+[ext_resource path="res://Graphical Assets/Ear.material" type="Material" id=4]
+[ext_resource path="res://Graphical Assets/Mouth.material" type="Material" id=5]
+[ext_resource path="res://Graphical Assets/Ankles.material" type="Material" id=6]
+
 
 [sub_resource type="ArrayMesh" id=1]
 

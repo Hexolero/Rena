@@ -2,15 +2,15 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Rena.dae-83d06959c7662f87b5af6bcdf6a93c5b.scn"
+path="res://.import/Ilya.dae-09f203ee390e74fc57ca5350476bb05e.scn"
 
 [deps]
 
-source_file="res://Materials/Rena.dae"
-source_md5="1deecfbfe7611c64e69ae4297393f138"
+source_file="res://Graphical Assets/Ilya.dae"
+source_md5="8615e59fd41cfee819aa5cf32aeec7e7"
 
-dest_files=[ "res://.import/Rena.dae-83d06959c7662f87b5af6bcdf6a93c5b.scn" ]
-dest_md5="1003e966feca70911866994a75e2f65c"
+dest_files=[ "res://.import/Ilya.dae-09f203ee390e74fc57ca5350476bb05e.scn" ]
+dest_md5="7ff19efaf568f2e44b771a1d5b6518e7"
 
 [params]
 
