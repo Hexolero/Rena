@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/footStep1.wav-179f0ebcd452ee7b73fe05b1fd00f13c.sample"
+
+[deps]
+
+source_file="res://Audio/footStep1.wav"
+source_md5="542cc99c1026aea1e162b6bb59d9ca33"
+
+dest_files=[ "res://.import/footStep1.wav-179f0ebcd452ee7b73fe05b1fd00f13c.sample" ]
+dest_md5="ab6d6a9839b717d58b787d59e973180b"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

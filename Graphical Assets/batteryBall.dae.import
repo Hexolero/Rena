@@ -2,15 +2,15 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/leverBeta.dae-cb25229ac5261f99512f0c7187694cee.scn"
+path="res://.import/batteryBall.dae-d901549f0b74cb49b9161a3b72b66997.scn"
 
 [deps]
 
-source_file="res://Graphical Assets/leverBeta.dae"
-source_md5="db5c163113f349987e90ac8cbd19afc2"
+source_file="res://Graphical Assets/batteryBall.dae"
+source_md5="ae69077b3ed491b143f747dfd91cf561"
 
-dest_files=[ "res://.import/leverBeta.dae-cb25229ac5261f99512f0c7187694cee.scn" ]
-dest_md5="900a8d7ce288c5bf29f1d7a39fce60d6"
+dest_files=[ "res://.import/batteryBall.dae-d901549f0b74cb49b9161a3b72b66997.scn" ]
+dest_md5="b51e9792f3a3a3e336d238c40a19221f"
 
 [params]
 

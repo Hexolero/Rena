@@ -2,15 +2,15 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/leverBeta.dae-cb25229ac5261f99512f0c7187694cee.scn"
+path="res://.import/wireStraight.dae-59530138ad02878d341ce5bbdeaeab42.scn"
 
 [deps]
 
-source_file="res://Graphical Assets/leverBeta.dae"
-source_md5="db5c163113f349987e90ac8cbd19afc2"
+source_file="res://Graphical Assets/wireStraight.dae"
+source_md5="7b70542e94139dd9247595b271f1f0c8"
 
-dest_files=[ "res://.import/leverBeta.dae-cb25229ac5261f99512f0c7187694cee.scn" ]
-dest_md5="900a8d7ce288c5bf29f1d7a39fce60d6"
+dest_files=[ "res://.import/wireStraight.dae-59530138ad02878d341ce5bbdeaeab42.scn" ]
+dest_md5="94ece92eab888daeb69f5d489841d0f3"
 
 [params]
 

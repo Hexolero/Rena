@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/plateToggle.wav-5200456152ccdee2e7d17b51ed7103fe.sample"
+
+[deps]
+
+source_file="res://Audio/plateToggle.wav"
+source_md5="10ab06e645b59c8e8292348c9190e799"
+
+dest_files=[ "res://.import/plateToggle.wav-5200456152ccdee2e7d17b51ed7103fe.sample" ]
+dest_md5="4a26187a4bb616c803b1397bb6dcc31c"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

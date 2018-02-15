@@ -2,15 +2,15 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/leverBeta.dae-cb25229ac5261f99512f0c7187694cee.scn"
+path="res://.import/batterySocket.dae-44085a850d57bb8c4a4aafe1fc608cfe.scn"
 
 [deps]
 
-source_file="res://Graphical Assets/leverBeta.dae"
-source_md5="db5c163113f349987e90ac8cbd19afc2"
+source_file="res://Graphical Assets/batterySocket.dae"
+source_md5="01ec14a29251d306401c987a5de3265a"
 
-dest_files=[ "res://.import/leverBeta.dae-cb25229ac5261f99512f0c7187694cee.scn" ]
-dest_md5="900a8d7ce288c5bf29f1d7a39fce60d6"
+dest_files=[ "res://.import/batterySocket.dae-44085a850d57bb8c4a4aafe1fc608cfe.scn" ]
+dest_md5="abec48b1af7a9926854c7c39eba8e8dc"
 
 [params]
 

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/leverToggle.wav-f95bd35caf4d8de13da63b751a694c15.sample"
+
+[deps]
+
+source_file="res://Audio/leverToggle.wav"
+source_md5="01173c4e80280092f5152513be2edfc7"
+
+dest_files=[ "res://.import/leverToggle.wav-f95bd35caf4d8de13da63b751a694c15.sample" ]
+dest_md5="59d3f343362e3635ce3221c664f86801"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
