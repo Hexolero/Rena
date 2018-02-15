@@ -18,3 +18,5 @@ func _activate():
 		powerState = false
 		# play animation for switching off
 		$AnimationPlayer.play_backwards("leverBeta")
+	
+	$leverSFX.play()

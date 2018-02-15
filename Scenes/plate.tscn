@@ -1,0 +1,108 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Puzzle Parts/plate.gd" type="Script" id=1]
+[ext_resource path="res://Graphical Assets/plateBeta_png.material" type="Material" id=2]
+[ext_resource path="res://Audio/plateToggle.wav" type="AudioStream" id=3]
+
+[sub_resource type="ArrayMesh" id=1]
+
+resource_name = "PressurePlate"
+blend_shape_mode = 1
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+surfaces/0 = {
+"aabb": AABB( -0.81201, 0, -0.81201, 1.62403, 0.0549999, 1.62402 ),
+"array_data": PoolByteArray( 126, 58, 0, 0, 126, 186, 0, 60, 0, 129, 0, 0, 0, 0, 130, 129, 189, 50, 178, 43, 126, 186, 0, 0, 126, 186, 0, 60, 0, 129, 0, 0, 0, 0, 130, 129, 189, 50, 50, 50, 126, 186, 0, 0, 126, 58, 0, 60, 0, 129, 0, 0, 0, 0, 129, 129, 239, 44, 50, 50, 126, 186, 10, 43, 126, 186, 0, 60, 0, 127, 0, 0, 126, 0, 0, 129, 158, 50, 163, 50, 126, 58, 10, 43, 126, 186, 0, 60, 0, 127, 0, 0, 127, 0, 0, 129, 87, 58, 163, 50, 126, 58, 10, 43, 126, 58, 0, 60, 0, 127, 0, 0, 127, 0, 0, 129, 87, 58, 89, 58, 126, 58, 10, 43, 126, 186, 0, 60, 127, 0, 0, 0, 0, 0, 129, 129, 255, 59, 115, 59, 126, 58, 0, 0, 126, 186, 0, 60, 127, 0, 0, 0, 0, 0, 129, 129, 255, 59, 150, 59, 126, 58, 0, 0, 126, 58, 0, 60, 127, 0, 0, 0, 0, 0, 129, 129, 0, 56, 150, 59, 126, 58, 10, 43, 126, 58, 0, 60, 0, 0, 127, 0, 127, 0, 0, 129, 255, 59, 150, 59, 126, 58, 0, 0, 126, 58, 0, 60, 0, 0, 127, 0, 127, 0, 0, 129, 255, 59, 185, 59, 126, 186, 0, 0, 126, 58, 0, 60, 0, 0, 127, 0, 127, 0, 0, 129, 0, 56, 185, 59, 126, 186, 0, 0, 126, 58, 0, 60, 129, 0, 0, 0, 0, 0, 129, 129, 0, 56, 221, 59, 126, 186, 0, 0, 126, 186, 0, 60, 129, 0, 0, 0, 0, 0, 130, 129, 255, 59, 221, 59, 126, 186, 10, 43, 126, 186, 0, 60, 129, 0, 0, 0, 0, 0, 129, 129, 255, 59, 255, 59, 126, 58, 0, 0, 126, 186, 0, 60, 0, 0, 129, 0, 127, 0, 0, 129, 255, 59, 186, 59, 126, 58, 10, 43, 126, 186, 0, 60, 0, 0, 129, 0, 127, 0, 0, 129, 255, 59, 220, 59, 126, 186, 10, 43, 126, 186, 0, 60, 0, 0, 129, 0, 127, 0, 0, 129, 0, 56, 220, 59, 126, 58, 0, 0, 126, 58, 0, 60, 0, 129, 0, 0, 0, 0, 129, 129, 239, 44, 178, 43, 126, 186, 10, 43, 126, 58, 0, 60, 0, 127, 0, 0, 126, 0, 0, 129, 158, 50, 89, 58, 126, 58, 10, 43, 126, 186, 0, 60, 127, 0, 0, 0, 0, 0, 129, 129, 255, 59, 115, 59, 126, 58, 0, 0, 126, 58, 0, 60, 127, 0, 0, 0, 0, 0, 129, 129, 0, 56, 150, 59, 126, 58, 10, 43, 126, 58, 0, 60, 127, 0, 0, 0, 0, 0, 129, 129, 0, 56, 115, 59, 126, 58, 10, 43, 126, 58, 0, 60, 0, 0, 127, 0, 127, 0, 0, 129, 255, 59, 150, 59, 126, 186, 0, 0, 126, 58, 0, 60, 0, 0, 127, 0, 127, 0, 0, 129, 0, 56, 185, 59, 126, 186, 10, 43, 126, 58, 0, 60, 0, 0, 127, 0, 127, 0, 0, 129, 0, 56, 150, 59, 126, 186, 0, 0, 126, 58, 0, 60, 129, 0, 0, 0, 0, 0, 129, 129, 0, 56, 221, 59, 126, 186, 10, 43, 126, 186, 0, 60, 129, 0, 0, 0, 0, 0, 129, 129, 255, 59, 255, 59, 126, 186, 10, 43, 126, 58, 0, 60, 129, 0, 0, 0, 0, 0, 129, 129, 0, 56, 255, 59, 126, 58, 0, 0, 126, 186, 0, 60, 0, 0, 129, 0, 127, 0, 0, 129, 255, 59, 186, 59, 126, 186, 10, 43, 126, 186, 0, 60, 0, 0, 129, 0, 127, 0, 0, 129, 0, 56, 220, 59, 126, 186, 0, 0, 126, 186, 0, 60, 0, 0, 129, 0, 127, 0, 0, 129, 0, 56, 186, 59 ),
+"array_index_data": PoolByteArray( 0, 0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 11, 0, 12, 0, 13, 0, 14, 0, 15, 0, 16, 0, 17, 0, 0, 0, 2, 0, 18, 0, 3, 0, 5, 0, 19, 0, 20, 0, 21, 0, 22, 0, 23, 0, 24, 0, 25, 0, 26, 0, 27, 0, 28, 0, 29, 0, 30, 0, 31, 0 ),
+"blend_shape_data": [  ],
+"format": 98071,
+"index_count": 36,
+"material": ExtResource( 2 ),
+"name": "plateBeta_png",
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 32
+}
+
+[sub_resource type="BoxShape" id=2]
+
+extents = Vector3( 0.811597, 0.0271028, 0.809745 )
+
+[node name="plate" type="Area"]
+
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+script = ExtResource( 1 )
+powerablePath = null
+
+[node name="PressurePlate" type="MeshInstance" parent="." index="0"]
+
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = true
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 1 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+blend_times = [  ]
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="2"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.027573, 0 )
+shape = SubResource( 2 )
+disabled = false
+
+[node name="plateSFX" type="AudioStreamPlayer3D" parent="." index="3"]
+
+stream = ExtResource( 3 )
+attenuation_model = 0
+unit_db = 0.0
+unit_size = 1.0
+max_db = 3.0
+autoplay = false
+max_distance = 0.0
+out_of_range_mode = 0
+bus = "Master"
+area_mask = 1
+emission_angle_enabled = false
+emission_angle_degrees = 45.0
+emission_angle_filter_attenuation_db = -12.0
+attenuation_filter_cutoff_hz = 5000.0
+attenuation_filter_db = -24.0
+doppler_tracking = 0
+
+[connection signal="body_entered" from="." to="." method="_on_plate_body_entered"]
+
+[connection signal="body_exited" from="." to="." method="_on_plate_body_exited"]
+
+

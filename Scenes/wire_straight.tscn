@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Graphical Assets/wireStraight.dae" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Puzzle Parts/wire.gd" type="Script" id=2]
+[ext_resource path="res://Graphical Assets/WireOff.material" type="Material" id=3]
+
+[node name="wire" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+connectedPath1 = null
+connectedPath2 = null
+connectedPath3 = null
+connectedPath4 = null
+meshPath = NodePath("WireStraight")
+
+[node name="WireStraight" parent="." index="0"]
+
+material/0 = ExtResource( 3 )
+_sections_unfolded = [ "material" ]
+
+

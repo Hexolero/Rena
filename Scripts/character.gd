@@ -67,7 +67,7 @@ func _physics_process(delta):
 		currentCharNode = $ilya
 	else:
 		currentCharNode = $rena
-	if clickEventQueued && currentCharNode.is_on_floor():
+	if clickEventQueued && currentCharNode.is_on_floor() && currentCharacter != "Swapping":
 		clickEventQueued = false # consume event
 		if is_friend_in_sight():
 			swap_character()
@@ -189,6 +189,11 @@ func _input(event):
 func get_collider_in_sight():
 	# call this only during _physics_process(), else space may be locked -> error
 	# returns raycast data from centre of screen
+	
+	# Safety check - Return if we're in an invalid character state
+	if currentCharacter == "Swapping":
+		return []
+	
 	var midScreen = OS.window_size / 2
 	var space_state = get_world().direct_space_state
 	var exceptions = []
