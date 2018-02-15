@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 2.79.0 commit date:2017-09-11, commit time:10:43, hash:5bd8ac9</authoring_tool>
     </contributor>
-    <created>2018-02-12T20:09:03</created>
-    <modified>2018-02-12T20:09:03</modified>
+    <created>2018-02-14T23:14:30</created>
+    <modified>2018-02-14T23:14:30</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -50,7 +50,7 @@
     <geometry id="PressurePlate-mesh" name="PressurePlate">
       <mesh>
         <source id="PressurePlate-mesh-positions">
-          <float_array id="PressurePlate-mesh-positions-array" count="24">0.8120093 0.8120094 -0.02741152 0.8120093 -0.8120094 -0.02741152 -0.8120096 -0.8120092 -0.02741152 -0.8120091 0.8120097 -0.02741152 0.8120097 0.812009 0.02741152 0.8120089 -0.8120099 0.02741152 -0.8120098 -0.8120091 0.02741152 -0.8120093 0.8120094 0.02741152</float_array>
+          <float_array id="PressurePlate-mesh-positions-array" count="24">0.8120093 0.8120094 0 0.8120093 -0.8120094 0 -0.8120096 -0.8120092 0 -0.8120091 0.8120097 0 0.8120097 0.812009 0.05499994 0.8120089 -0.8120099 0.05499994 -0.8120098 -0.8120091 0.05499994 -0.8120093 0.8120094 0.05499994</float_array>
           <technique_common>
             <accessor source="#PressurePlate-mesh-positions-array" count="8" stride="3">
               <param name="X" type="float"/>
@@ -60,9 +60,9 @@
           </technique_common>
         </source>
         <source id="PressurePlate-mesh-normals">
-          <float_array id="PressurePlate-mesh-normals-array" count="36">0 0 -1 0 0 1 1 0 -6.52331e-6 0 -1 -8.03354e-6 -1 3.34731e-7 -4.34887e-6 2.20212e-7 1 5.3557e-6 0 0 -1 0 0 1 1 -5.02096e-7 8.69775e-6 -4.77125e-7 -1 3.26166e-6 -1 2.51048e-7 -3.26166e-6 1.8351e-7 1 7.02673e-6</float_array>
+          <float_array id="PressurePlate-mesh-normals-array" count="33">0 0 -1 0 0 1 1 0 -6.50232e-6 0 -1 -8.0077e-6 -1 3.33654e-7 -4.33488e-6 2.20212e-7 1 5.33846e-6 0 0 1 1 -5.00481e-7 8.66976e-6 -4.77125e-7 -1 3.25116e-6 -1 2.50241e-7 -3.25116e-6 1.8351e-7 1 7.00412e-6</float_array>
           <technique_common>
-            <accessor source="#PressurePlate-mesh-normals-array" count="12" stride="3">
+            <accessor source="#PressurePlate-mesh-normals-array" count="11" stride="3">
               <param name="X" type="float"/>
               <param name="Y" type="float"/>
               <param name="Z" type="float"/>
@@ -85,7 +85,7 @@
           <input semantic="VERTEX" source="#PressurePlate-mesh-vertices" offset="0"/>
           <input semantic="NORMAL" source="#PressurePlate-mesh-normals" offset="1"/>
           <input semantic="TEXCOORD" source="#PressurePlate-mesh-map" offset="2" set="0"/>
-          <p>0 0 0 2 0 1 3 0 2 7 1 3 5 1 4 4 1 5 4 2 6 1 2 7 0 2 8 5 3 9 2 3 10 1 3 11 2 4 12 7 4 13 3 4 14 0 5 15 7 5 16 4 5 17 0 6 18 1 6 19 2 6 20 7 7 21 6 7 22 5 7 23 4 8 24 5 8 25 1 8 26 5 9 27 6 9 28 2 9 29 2 10 30 6 10 31 7 10 32 0 11 33 3 11 34 7 11 35</p>
+          <p>0 0 0 2 0 1 3 0 2 7 1 3 5 1 4 4 1 5 4 2 6 1 2 7 0 2 8 5 3 9 2 3 10 1 3 11 2 4 12 7 4 13 3 4 14 0 5 15 7 5 16 4 5 17 0 0 18 1 0 19 2 0 20 7 6 21 6 6 22 5 6 23 4 7 24 5 7 25 1 7 26 5 8 27 6 8 28 2 8 29 2 9 30 6 9 31 7 9 32 0 10 33 3 10 34 7 10 35</p>
         </triangles>
       </mesh>
     </geometry>

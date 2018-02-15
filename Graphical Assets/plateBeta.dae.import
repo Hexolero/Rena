@@ -7,10 +7,10 @@ path="res://.import/plateBeta.dae-2ffe3537ce83db970d560d2dfdc80236.scn"
 [deps]
 
 source_file="res://Graphical Assets/plateBeta.dae"
-source_md5="bb4a2e26d4238a04264b8f9528d9d770"
+source_md5="68b252f15999a76c70df371f0e67d7f9"
 
 dest_files=[ "res://.import/plateBeta.dae-2ffe3537ce83db970d560d2dfdc80236.scn" ]
-dest_md5="924ebdd78701fd92f369a077bb4c89bd"
+dest_md5="8d3d6db9366e3f64f29a5492948b527c"
 
 [params]
 
