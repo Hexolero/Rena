@@ -7,7 +7,7 @@ path="res://.import/fogWall.dae-da25bfd20174858e95d2c7ee362998ce.scn"
 [deps]
 
 source_file="res://Graphical Assets/fogWall.dae"
-source_md5="52cce0c7ab033a00aedbe2fdaa9081c4"
+source_md5="09c8562c7e8faec6fa27ecf40cb5d07c"
 
 dest_files=[ "res://.import/fogWall.dae-da25bfd20174858e95d2c7ee362998ce.scn" ]
 dest_md5="30b71589be4b660291eac5411b5c6b38"

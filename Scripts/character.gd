@@ -9,7 +9,7 @@ const ILYA_MOVESPEED = 6.0
 const RENA_MOVESPEED = 9.0
 
 const ILYA_CAMERA_POS = Vector3(0, 2.36, 0.65) # this is when camera container is a child of ilya
-const RENA_CAMERA_POS = Vector3(0, 0.98, 0.54) # this is when camera container is a child of rena
+const RENA_CAMERA_POS = Vector3(0, 0.98, 0.50) # this is when camera container is a child of rena
 
 # Shared constants
 const MOUSE_CAMERA_TURN_SPEED = 0.005
@@ -31,6 +31,9 @@ var currentCharacter = "Ilya"
 
 var clickEventQueued = false # Queued for physics pass
 var nextCharacter
+
+var ilyaHasBattery = false
+var renaHasBattery = false
 
 # swap variables
 var swapOriginPos
@@ -165,10 +168,6 @@ func _physics_process(delta):
 	
 	mouseFrameDelta = Vector2() # reset mouse frame delta
 
-#func _process(delta):
-#	
-#	pass
-
 func _input(event):
 	# Keyboard input
 	if event.is_action_pressed("ui_cancel"):
@@ -229,9 +228,37 @@ func trigger_in_sight():
 			dist = ($ilya.translation - sightcast_data.collider.translation).length()
 		elif currentCharacter == "Rena":
 			dist = ($rena.translation - sightcast_data.collider.translation).length()
-		print(dist)
+		
 		if sightcast_data.collider.name.find("lever") != -1 && currentCharacter == "Ilya" && dist < LEVER_USE_RANGE:
 			sightcast_data.collider._activate()
+		
+		if sightcast_data.collider.name.find("battery") != -1 && dist < LEVER_USE_RANGE:
+			# Pickup battery if we are not already holding one
+			if currentCharacter == "Ilya" && !ilyaHasBattery:
+				sightcast_data.collider._pickup()
+				ilyaHasBattery = true
+			elif currentCharacter == "Rena" && !renaHasBattery:
+				sightcast_data.collider._pickup()
+				ilyaHasBattery = true
+		
+		if sightcast_data.collider.name.find("socket") != -1 && dist < LEVER_USE_RANGE:
+			# Place battery if we're able, or pickup battery from socket if we're able
+			if sightcast_data.collider.hasBattery:
+				# Trying to pick up battery
+				if currentCharacter == "Ilya" && !ilyaHasBattery:
+					sightcast_data.collider._remove_battery()
+					ilyaHasBattery = true
+				elif currentCharacter == "Rena" && !renaHasBattery:
+					sightcast_data.collider._remove_battery()
+					renaHasBattery = true
+			else:
+				# Trying to place battery
+				if currentCharacter == "Ilya" && ilyaHasBattery:
+					sightcast_data.collider._place_battery()
+					ilyaHasBattery = false
+				elif currentCharacter == "Rena" && renaHasBattery:
+					sightcast_data.collider._place_battery()
+					renaHasBattery = false
 
 func swap_character():
 	# We can successsfully start a character swap.
